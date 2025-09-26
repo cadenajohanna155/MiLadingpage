@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hábitos Saludables</title>
+  <style>
+    :root {
+      --primario: #2ecc71;
+      --secundario: #27ae60;
+      --complementario: #f39c12;
+      --gris: #f4f4f4;
+      --oscuro: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: var(--gris);
+      color: var(--oscuro);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primario);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+      color: var(--complementario);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 20px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      color: var(--secundario);
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--complementario);
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #d35400;
+      transform: translateY(-3px);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: var(--secundario);
+      color: white;
+      padding: 2rem 20px;
+      margin-top: 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .footer-grid p {
+      margin: 0.5rem 0;
+    }
+
+    /* Formulario */
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form .error {
+      color: red;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Hábitos Saludables</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#alimentacion">Alimentación</a></li>
+          <li><a href="#ejercicio">Ejercicio</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="container hero">
+    <div>
+      <h2>Vive mejor con hábitos saludables</h2>
+      <p>Pequeños cambios en tu rutina diaria pueden mejorar tu salud física y mental. ¡Comienza hoy!</p>
+      <button class="btn" id="toggleConsejo">Mostrar consejo</button>
+      <p id="extraConsejo" style="display:none; margin-top:1rem; font-weight:bold;">
+        🌿 Tip: Dormir bien es tan importante como alimentarse sano y hacer ejercicio.
+      </p>
+    </div>
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Apple.jpg" alt="Vida saludable">
+    </div>
+  </section>
+
+  <section id="alimentacion" class="container">
+    <h2>🍎 Alimentación</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Frutas y verduras</h3>
+        <p>Consume al menos 5 porciones diarias para mantener tu cuerpo lleno de vitaminas.</p>
+      </div>
+      <div class="card">
+        <h3>Agua</h3>
+        <p>Hidrátate con 8 vasos de agua al día para mejorar tu energía y concentración.</p>
+      </div>
+      <div class="card">
+        <h3>Evita procesados</h3>
+        <p>Reduce el consumo de comida chatarra para mantener tu organismo en equilibrio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ejercicio" class="container">
+    <h2>🏃 Ejercicio</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Caminar</h3>
+        <p>30 minutos al día son suficientes para empezar a notar cambios positivos.</p>
+      </div>
+      <div class="card">
+        <h3>Ejercicios en casa</h3>
+        <p>No necesitas gimnasio: lagartijas, sentadillas y saltos son grandes aliados.</p>
+      </div>
+      <div class="card">
+        <h3>Deportes</h3>
+        <p>Jugar fútbol, nadar o montar bici te mantiene activo y mejora tu ánimo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de contacto -->
+  <section id="contacto" class="container">
+    <h2>📩 Contáctanos</h2>
+    <form id="contactForm">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+      <p class="error" id="errorNombre"></p>
+
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" name="correo" placeholder="Tu correo">
+      <p class="error" id="errorCorreo"></p>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje..."></textarea>
+
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <p>&copy; 2025 Vida sana con Andre | Todos los derechos reservados</p>
+      </div>
+      <div>
+        <p>📧 andrerosado@gmail.com | 📞 +57 322 2223 928</p>
+      </div>
+      <div>
+        <p>Hecho con ❤️ por Paula Andrea Rosado Cadena</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mostrar/ocultar consejo
+    const toggleBtn = document.getElementById("toggleConsejo");
+    const consejo = document.getElementById("extraConsejo");
+
+    toggleBtn.addEventListener("click", () => {
+      if (consejo.style.display === "none") {
+        consejo.style.display = "block";
+        toggleBtn.textContent = "Ocultar consejo";
+      } else {
+        consejo.style.display = "none";
+        toggleBtn.textContent = "Mostrar consejo";
+      }
+    });
+
+    // Validación del formulario
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      let nombre = document.getElementById("nombre").value.trim();
+      let correo = document.getElementById("correo").value.trim();
+      let errorNombre = document.getElementById("errorNombre");
+      let errorCorreo = document.getElementById("errorCorreo");
+
+      let valido = true;
+      errorNombre.textContent = "";
+      errorCorreo.textContent = "";
+
+      if (nombre.length < 3) {
+        errorNombre.textContent = "El nombre debe tener al menos 3 caracteres.";
+        valido = false;
+      }
+
+      if (correo === "" || !correo.includes("@")) {
+        errorCorreo.textContent = "Ingresa un correo válido.";
+        valido = false;
+      }
+
+      if (valido) {
+        alert("✅ Formulario enviado correctamente. ¡Gracias por contactarnos!");
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>
